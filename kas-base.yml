@@ -23,7 +23,7 @@ local_conf_header:
     INIT_MANAGER = "systemd"
     VIRTUAL-RUNTIME_init_manager = "systemd"
     DISTRO_FEATURES:append = " systemd"
-    DISTRO_FEATURES:append = " pam"
-    DISTRO_FEATURES:remove = " 3g alsa bluetooth ext2 pulseaudio sysvinit pcmcia wifi x11"
+    DISTRO_FEATURES:remove = " 3g alsa bluetooth ext2 pulseaudio sysvinit pcmcia ptest wifi x11"
+    DISTRO_FEATURES:remove = " debuginfod  nfs zeroconf pci nfc opengl wayland vulkan"
 
 target: image-ppc-sbc

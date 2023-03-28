@@ -2,15 +2,20 @@ header:
   version: 11
   includes:
     - kas-base.yml
+
+repos:
+  meta-raspberrypi:
+    url: "https://git.yoctoproject.org/meta-raspberrypi"
+    refspec: "langdale"
+
 machine: raspberrypi4-64
-target: image-ppc-rpi4
 local_conf_header:
   meta-bcddev: |
     INIT_MANAGER = "systemd"
     VIRTUAL-RUNTIME_init_manager = "systemd"
     DISTRO_FEATURES:append = " systemd"
-    DISTRO_FEATURES:append = " pam"
-    DISTRO_FEATURES:remove = " 3g alsa bluetooth ext2 pulseaudio sysvinit pcmcia wifi x11"
+    DISTRO_FEATURES:remove = " 3g alsa bluetooth ext2 pulseaudio sysvinit pcmcia ptest wifi x11"
+    DISTRO_FEATURES:remove = " debuginfod  nfs zeroconf pci nfc opengl wayland vulkan"
     LICENSE_FLAGS_ACCEPTED += "synaptics-killswitch"
     IMAGE_FSTYPES = "ext4 rpi-sdimg"
     SDIMG_ROOTFS_TYPE = "ext4"
