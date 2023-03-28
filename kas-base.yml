@@ -12,7 +12,6 @@ repos:
     layers:
       meta:
       meta-poky:
-      meta-yocto-bsp:
 
 bblayers_conf_header:
   meta-bcddev: |
@@ -26,6 +25,5 @@ local_conf_header:
     DISTRO_FEATURES:append = " systemd"
     DISTRO_FEATURES:append = " pam"
     DISTRO_FEATURES:remove = " 3g alsa bluetooth ext2 pulseaudio sysvinit pcmcia wifi x11"
-    LICENSE_FLAGS_ACCEPTED += "synaptics-killswitch"
 
 target: image-ppc-sbc
