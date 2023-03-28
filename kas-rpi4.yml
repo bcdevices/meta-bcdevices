@@ -1,0 +1,23 @@
+header:
+  version: 11
+  includes:
+    - kas-base.yml
+machine: raspberrypi4-64
+target: image-ppc-rpi4
+local_conf_header:
+  meta-bcddev: |
+    INIT_MANAGER = "systemd"
+    VIRTUAL-RUNTIME_init_manager = "systemd"
+    DISTRO_FEATURES:append = " systemd"
+    DISTRO_FEATURES:append = " pam"
+    DISTRO_FEATURES:remove = " 3g alsa bluetooth ext2 pulseaudio sysvinit pcmcia wifi x11"
+    LICENSE_FLAGS_ACCEPTED += "synaptics-killswitch"
+    IMAGE_FSTYPES = "ext4 rpi-sdimg"
+    SDIMG_ROOTFS_TYPE = "ext4"
+    KERNEL_IMAGETYPE = "Image"
+    HDMI_GROUP = "1"
+    HDMI_MODE = "4"
+    ENABLE_UART = "1"
+    ENABLE_DWC2_PERIPHERAL = "1"
+    CMDLINE_RNDIS = "modules-load=dwc2,g_multi g_multi.file=/opt/pltagent/usb-msc.img"
+    CMDLINE_RNDIS += " fbcon=scrollback:1024k consoleblank=0 quiet swiotlb=65535"

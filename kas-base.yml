@@ -1,0 +1,29 @@
+header:
+  version: 11
+
+distro: poky
+
+repos:
+  meta-bcdevices:
+
+  poky:
+    url: "https://git.yoctoproject.org/git/poky"
+    refspec: "langdale-4.1.2"
+    layers:
+      meta:
+      meta-poky:
+
+bblayers_conf_header:
+  meta-bcddev: |
+    BBPATH = "${TOPDIR}"
+    BBFILES ?= ""
+
+local_conf_header:
+  meta-bcddev: |
+    INIT_MANAGER = "systemd"
+    VIRTUAL-RUNTIME_init_manager = "systemd"
+    DISTRO_FEATURES:append = " systemd"
+    DISTRO_FEATURES:append = " pam"
+    DISTRO_FEATURES:remove = " 3g alsa bluetooth ext2 pulseaudio sysvinit pcmcia wifi x11"
+
+target: image-ppc-sbc
