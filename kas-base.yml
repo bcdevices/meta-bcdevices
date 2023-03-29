@@ -1,7 +1,11 @@
+# kas-base.yml
+---
 header:
   version: 11
 
 distro: poky
+target:
+  - ppc-sbc-test-image
 
 repos:
   meta-bcdevices:
@@ -14,16 +18,24 @@ repos:
       meta-poky:
 
 bblayers_conf_header:
-  meta-bcddev: |
+  standard: |
+    POKY_BBLAYERS_CONF_VERSION = "2"
     BBPATH = "${TOPDIR}"
     BBFILES ?= ""
-
 local_conf_header:
+  standard: |
+    CONF_VERSION = "2"
+    PACKAGE_CLASSES = "package_rpm"
+    SDKMACHINE = "x86_64"
+    USER_CLASSES = "buildstats"
+    PATCHRESOLVE = "noop"
   meta-bcddev: |
     INIT_MANAGER = "systemd"
     VIRTUAL-RUNTIME_init_manager = "systemd"
     DISTRO_FEATURES:append = " systemd"
-    DISTRO_FEATURES:remove = " 3g alsa bluetooth ext2 pulseaudio sysvinit pcmcia ptest wifi x11"
-    DISTRO_FEATURES:remove = " debuginfod  nfs zeroconf pci nfc opengl wayland vulkan"
-
-target: image-ppc-sbc
+    DISTRO_FEATURES:remove = " 3g bluetooth wifi"
+    DISTRO_FEATURES:remove = " alsa pulseaudio"
+    DISTRO_FEATURES:remove = " opengl wayland vulkan x11"
+    DISTRO_FEATURES:remove = " debuginfod ptest"
+    DISTRO_FEATURES:remove = " sysvinit nfs zeroconf ext2"
+    DISTRO_FEATURES:remove = " pci pcmcia nfc"
