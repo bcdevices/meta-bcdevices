@@ -1,3 +1,5 @@
+# kas-rpi4.yml
+---
 header:
   version: 11
   includes:
@@ -14,8 +16,12 @@ local_conf_header:
     INIT_MANAGER = "systemd"
     VIRTUAL-RUNTIME_init_manager = "systemd"
     DISTRO_FEATURES:append = " systemd"
-    DISTRO_FEATURES:remove = " 3g alsa bluetooth ext2 pulseaudio sysvinit pcmcia ptest wifi x11"
-    DISTRO_FEATURES:remove = " debuginfod  nfs zeroconf pci nfc opengl wayland vulkan"
+    DISTRO_FEATURES:remove = " 3g bluetooth wifi"
+    DISTRO_FEATURES:remove = " alsa pulseaudio"
+    DISTRO_FEATURES:remove = " opengl wayland vulkan x11"
+    DISTRO_FEATURES:remove = " debuginfod ptest"
+    DISTRO_FEATURES:remove = " sysvinit nfs zeroconf ext2"
+    DISTRO_FEATURES:remove = " pci pcmcia nfc"
     LICENSE_FLAGS_ACCEPTED += "synaptics-killswitch"
     IMAGE_FSTYPES = "ext4 rpi-sdimg"
     SDIMG_ROOTFS_TYPE = "ext4"
@@ -24,5 +30,7 @@ local_conf_header:
     HDMI_MODE = "4"
     ENABLE_UART = "1"
     ENABLE_DWC2_PERIPHERAL = "1"
-    CMDLINE_RNDIS = "modules-load=dwc2,g_multi g_multi.file=/opt/pltagent/usb-msc.img"
-    CMDLINE_RNDIS += " fbcon=scrollback:1024k consoleblank=0 quiet swiotlb=65535"
+    CMDLINE_RNDIS = "modules-load=dwc2,g_multi"
+    CMDLINE_RNDIS += " g_multi.file=/opt/pltagent/usb-msc.img"
+    CMDLINE_RNDIS += " fbcon=scrollback:1024k consoleblank=0 quiet"
+    CMDLINE_RNDIS += " quiet swiotlb=65535"

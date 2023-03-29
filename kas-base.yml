@@ -1,3 +1,5 @@
+# kas-base.yml
+---
 header:
   version: 11
 
@@ -23,7 +25,11 @@ local_conf_header:
     INIT_MANAGER = "systemd"
     VIRTUAL-RUNTIME_init_manager = "systemd"
     DISTRO_FEATURES:append = " systemd"
-    DISTRO_FEATURES:remove = " 3g alsa bluetooth ext2 pulseaudio sysvinit pcmcia ptest wifi x11"
-    DISTRO_FEATURES:remove = " debuginfod  nfs zeroconf pci nfc opengl wayland vulkan"
+    DISTRO_FEATURES:remove = " 3g bluetooth wifi"
+    DISTRO_FEATURES:remove = " alsa pulseaudio"
+    DISTRO_FEATURES:remove = " opengl wayland vulkan x11"
+    DISTRO_FEATURES:remove = " debuginfod ptest"
+    DISTRO_FEATURES:remove = " sysvinit nfs zeroconf ext2"
+    DISTRO_FEATURES:remove = " pci pcmcia nfc"
 
-target: image-ppc-sbc
+target: ppc-sbc-test-image
