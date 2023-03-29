@@ -4,6 +4,8 @@ header:
   version: 11
 
 distro: poky
+target:
+  - ppc-sbc-test-image
 
 repos:
   meta-bcdevices:
@@ -16,11 +18,17 @@ repos:
       meta-poky:
 
 bblayers_conf_header:
-  meta-bcddev: |
+  standard: |
+    POKY_BBLAYERS_CONF_VERSION = "2"
     BBPATH = "${TOPDIR}"
     BBFILES ?= ""
-
 local_conf_header:
+  standard: |
+    CONF_VERSION = "2"
+    PACKAGE_CLASSES = "package_rpm"
+    SDKMACHINE = "x86_64"
+    USER_CLASSES = "buildstats"
+    PATCHRESOLVE = "noop"
   meta-bcddev: |
     INIT_MANAGER = "systemd"
     VIRTUAL-RUNTIME_init_manager = "systemd"
@@ -31,5 +39,3 @@ local_conf_header:
     DISTRO_FEATURES:remove = " debuginfod ptest"
     DISTRO_FEATURES:remove = " sysvinit nfs zeroconf ext2"
     DISTRO_FEATURES:remove = " pci pcmcia nfc"
-
-target: ppc-sbc-test-image

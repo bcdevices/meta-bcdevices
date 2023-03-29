@@ -5,12 +5,13 @@ header:
   includes:
     - kas-base.yml
 
+machine: raspberrypi4-64
+
 repos:
   meta-raspberrypi:
     url: "https://git.yoctoproject.org/meta-raspberrypi"
     refspec: "langdale"
 
-machine: raspberrypi4-64
 local_conf_header:
   meta-bcddev: |
     INIT_MANAGER = "systemd"

@@ -9,14 +9,7 @@ DESCRIPTION = " \
 "
 HOMEPAGE = "https://bcdevices.com/pages/production-line-tool"
 LICENSE = "MIT"
-#LIC_FILES_CHKSUM = "file://${COREBASE}/meta/COPYING.MIT;md5=3da9cfbcb788c80a0384361b4de20420"
 
 inherit core-image
 
 IMAGE_INSTALL:append = " packagegroup-ppc-sbc"
-#IMAGE_INSTALL:append = " pltagent"
-#IMAGE_INSTALL:append = " util-linux-agetty"
-
-#IMAGE_INSTALL:append = " flashrom"
-#IMAGE_INSTALL:append = " openocd"
-#IMAGE_INSTALL:append = " usb-modeswitch"
