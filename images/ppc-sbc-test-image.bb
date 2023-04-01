@@ -8,7 +8,6 @@ DESCRIPTION = " \
     Blue Clover's Production Line Tool (PLT). \
 "
 HOMEPAGE = "https://bcdevices.com/pages/production-line-tool"
-LICENSE = "MIT"
 
 inherit core-image
 
