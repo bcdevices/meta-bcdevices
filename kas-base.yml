@@ -1,7 +1,7 @@
-# kas-base.yml
+# kas-base.yml:meta-bcdevices
 ---
 header:
-  version: 11
+  version: 13
 
 distro: poky
 target:
@@ -12,6 +12,7 @@ repos:
 
   poky:
     url: "https://git.yoctoproject.org/git/poky"
+    path: layers/poky
     refspec: "langdale-4.1.2"
     layers:
       meta:
@@ -29,6 +30,16 @@ local_conf_header:
     SDKMACHINE = "x86_64"
     USER_CLASSES = "buildstats"
     PATCHRESOLVE = "noop"
+  diskmon: |
+    BB_DISKMON_DIRS = "\
+      STOPTASKS,${TMPDIR},1G,100K \
+      STOPTASKS,${DL_DIR},1G,100K \
+      STOPTASKS,${SSTATE_DIR},1G,100K \
+      STOPTASKS,/tmp,100M,100K \
+      HALT,${TMPDIR},100M,1K \
+      HALT,${DL_DIR},100M,1K \
+      HALT,${SSTATE_DIR},100M,1K \
+      HALT,/tmp,10M,1K"
   meta-bcddev: |
     INIT_MANAGER = "systemd"
     VIRTUAL-RUNTIME_init_manager = "systemd"
@@ -39,3 +50,5 @@ local_conf_header:
     DISTRO_FEATURES:remove = " debuginfod ptest"
     DISTRO_FEATURES:remove = " sysvinit nfs zeroconf ext2"
     DISTRO_FEATURES:remove = " pci pcmcia nfc"
+    #INHERIT += "create-spdx"
+    INHIBIT_PACKAGE_DEBUG_SPLIT = "1"
