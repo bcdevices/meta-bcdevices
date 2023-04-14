@@ -30,3 +30,7 @@ This layer depends on:
    ```
 2. copy the generated `.sd-img` file to the SD card
 3. Boot your RPi4
+
+### References
+
+- [PPC Yocto Layer — PLT Documentation](https://docs.pltcloud.com/acc/ppc/yocto/)
