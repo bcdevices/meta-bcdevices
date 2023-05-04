@@ -13,7 +13,7 @@ repos:
   poky:
     url: "https://git.yoctoproject.org/git/poky"
     path: layers/poky
-    refspec: "langdale-4.1.2"
+    refspec: "mickledore-4.2"
     layers:
       meta:
       meta-poky:
@@ -43,12 +43,6 @@ local_conf_header:
   meta-bcddev: |
     INIT_MANAGER = "systemd"
     VIRTUAL-RUNTIME_init_manager = "systemd"
-    DISTRO_FEATURES:append = " systemd"
-    DISTRO_FEATURES:remove = " 3g bluetooth wifi"
-    DISTRO_FEATURES:remove = " alsa pulseaudio"
-    DISTRO_FEATURES:remove = " opengl wayland vulkan x11"
-    DISTRO_FEATURES:remove = " debuginfod ptest"
-    DISTRO_FEATURES:remove = " sysvinit nfs zeroconf ext2"
-    DISTRO_FEATURES:remove = " pci pcmcia nfc"
+    DISTRO_FEATURES = "acl ipv4 ipv6 usbgadget usbhost xattr vfat seccomp multiarch ldconfig systemd"
     #INHERIT += "create-spdx"
     INHIBIT_PACKAGE_DEBUG_SPLIT = "1"
