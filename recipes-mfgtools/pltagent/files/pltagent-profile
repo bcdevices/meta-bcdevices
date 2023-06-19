@@ -2,6 +2,9 @@
 
 echo
 echo -n "machine-id:"; cat /etc/machine-id
+
+for i in /sys/class/thermal/*/temp; do t=$(cat ${i}); c=$[ ${t} / 1000 ]; f=$[ ${t} / 100 % 10 ]; echo "$(basename $(dirname $i)): ${c}.${f}℃"; done
+
 cat /etc/buildinfo
 echo "pltagent:PASS"
 echo "PASS"
