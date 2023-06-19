@@ -12,7 +12,7 @@ repos:
   meta-raspberrypi:
     url: "https://git.yoctoproject.org/meta-raspberrypi"
     path: layers/meta-raspberrypi
-    refspec: "langdale"
+    refspec: "master"
 
 local_conf_header:
   meta-bcddev: |
