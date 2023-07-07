@@ -35,6 +35,7 @@ RDEPENDS:${PN} += " dosfstools"
 RDEPENDS:${PN} += " parted"
 #RDEPENDS:${PN} += " pltagent-prog"
 RDEPENDS:${PN} += " util-linux-losetup"
+RDEPENDS:${PN} += " sudo"
 
 RRECOMMENDS:${PN} += " kernel-module-gadgetfs"
 RRECOMMENDS:${PN} += " kernel-module-g-file-storage"
