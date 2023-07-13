@@ -18,6 +18,17 @@ repos:
       meta:
       meta-poky:
 
+  meta-openembedded:
+    url: "https://github.com/openembedded/meta-openembedded.git"
+    path: layers/meta-openembedded
+    refspec: "mickledore"
+    layers:
+      # meta-filesystems:
+      meta-oe:
+      # meta-multimedia:
+      # meta-networking:
+      meta-python:
+
 bblayers_conf_header:
   standard: |
     POKY_BBLAYERS_CONF_VERSION = "2"

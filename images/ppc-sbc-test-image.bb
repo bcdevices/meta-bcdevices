@@ -12,3 +12,4 @@ HOMEPAGE = "https://bcdevices.com/pages/production-line-tool"
 inherit core-image
 
 IMAGE_INSTALL:append = " packagegroup-ppc-sbc"
+IMAGE_INSTALL:append = " python3-intelhex"
