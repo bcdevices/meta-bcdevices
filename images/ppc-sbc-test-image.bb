@@ -13,3 +13,4 @@ inherit core-image
 
 IMAGE_INSTALL:append = " packagegroup-ppc-sbc"
 IMAGE_INSTALL:append = " python3-intelhex"
+IMAGE_INSTALL:append = " python3-pyocd"
