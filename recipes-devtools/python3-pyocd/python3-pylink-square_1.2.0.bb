@@ -5,7 +5,7 @@ LIC_FILES_CHKSUM = "file://LICENSE.md;md5=834c4b2cb72db13143b58bebff15bafb"
 LICENSE = "Apache-2.0"
 
 PYPI_PACKAGE = "pylink-square"
-SRC_URI[sha256sum] = "c91261ae19a7ef6c70fda24f06da98272b27518dd71472c709e170afdee89f88"
+SRC_URI[sha256sum] = "736cf9e0272e87cdca1189f632f8d511e8f079c0ab96252fc331189490253ac3"
 
 inherit pypi setuptools3
 
