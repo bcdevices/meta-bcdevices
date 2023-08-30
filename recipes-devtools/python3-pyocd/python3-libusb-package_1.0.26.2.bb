@@ -4,9 +4,11 @@ HOMEPAGE ="https://pypi.org/project/libusb-package"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=e23fadd6ceef8c618fc1c65191d846fa"
 LICENSE = "Apache-2.0"
 
-PYPI_PACKAGE = "libusb-package"
-SRC_URI[sha256sum] = "5a586744a59e3870791c28f964568e211f5f44bb398ccb51b25f3565dd4666ad"
-
 inherit pypi setuptools3
+
+PYPI_PACKAGE = "libusb-package"
+# version 1.0.26.2 archive is not published on PyPi; use git instead
+PYPI_SRC_URI = "git://github.com/pyocd/libusb-package;protocol=https;branch=main;subdir=libusb-package-${PV}"
+SRCREV = "7a62b644f3cc075a37e8d2e255ee9941ce2ca752"
 
 DEPENDS += " python3-setuptools-scm-native"

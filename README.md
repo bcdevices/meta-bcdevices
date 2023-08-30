@@ -26,7 +26,7 @@ This layer depends on:
 
 1. Build
    ```shell
-   kas build meta-bcdevices/kas-rpi4.yml
+   kas build scripts/kas/kas-rpi4.yml
    ```
 2. copy the generated `.sd-img` file to the SD card
 3. Boot your RPi4

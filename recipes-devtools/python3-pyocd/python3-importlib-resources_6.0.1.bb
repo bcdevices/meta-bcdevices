@@ -8,7 +8,7 @@ inherit pypi python_setuptools_build_meta
 PYPI_PACKAGE = "importlib_resources"
 UPSTREAM_CHECK_REGEX = "/importlib-resources/(?P<pver>(\d+[\.\-_]*)+)/"
 
-SRC_URI[sha256sum] = "4be82589bf5c1d7999aedf2a45159d10cb3ca4f19b2271f8792bc8e6da7b22f6"
+SRC_URI[sha256sum] = "4359457e42708462b9626a04657c6208ad799ceb41e5c58c57ffa0e6a098a5d4"
 
 S = "${WORKDIR}/importlib_resources-${PV}"
 
