@@ -10,7 +10,7 @@ LICENSE = "Apache-2.0"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=421492e27872cb498685e9d7649f63a2"
 
 PYPI_PACKAGE = "pyocd"
-SRC_URI[sha256sum] = "02e8084f4d3b26d4d7c7470bb470fd4edc6c2bf2ba781e3dd94da4f84571c975"
+SRC_URI[sha256sum] = "937782acc9daff054d50fb7c6f788cd94a84f80f0b85f25aacab99dc98228648"
 
 inherit pypi setuptools3
 
