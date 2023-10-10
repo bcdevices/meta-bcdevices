@@ -31,9 +31,22 @@ RDEPENDS:${PN} += " python3-psutil"
 RDEPENDS:${PN} += " python3-pyelftools"
 RDEPENDS:${PN} += " python3-pylink-square"
 RDEPENDS:${PN} += " python3-pyocd-pemicro"
+RDEPENDS:${PN} += " python3-pypemicro"
 RDEPENDS:${PN} += " python3-pyusb"
 RDEPENDS:${PN} += " python3-pyyaml"
 RDEPENDS:${PN} += " python3-six"
 RDEPENDS:${PN} += " python3-typing-extensions"
 
 #RRECOMMENDS:${PN} += " segger-jlink"
+
+# Workaround for incomplete pip packaging
+# ```
+# File "/usr/lib/python3.11/site-packages/pyocd/debug/sequences/sequences.py", line 21, in <module>
+#    import lark.lark
+# File "/usr/lib/python3.11/site-packages/lark/__init__.py", line 11, in <module>
+#    from .lark import Lark
+# File "/usr/lib/python3.11/site-packages/lark/lark.py", line 2, in <module>
+#    import getpass
+# ModuleNotFoundError: No module named 'getpass'
+# ```
+FILES:${PN} += "/usr/lib/python3.11/site-packages/pyocd/debug/sequences/sequences.lark"
