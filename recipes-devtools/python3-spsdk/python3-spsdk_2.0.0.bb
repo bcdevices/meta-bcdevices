@@ -9,7 +9,7 @@ DESCRIPTION = "\
 HOMEPAGE = "https://github.com/nxp-mcuxpresso/spsdk"
 LICENSE = "BSD-3-Clause"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=6c72a66edfa65948c15795224be74979"
-SRC_URI[sha256sum] = "03d8821ad05a0149a107b9ddfc01371f6894d02ada36e1065b0efd9301526854"
+SRC_URI[sha256sum] = "1eab78cab1d77b4220845ef223e4b82c84fbe92cecd8ae01c6ab8a7dda183c32"
 
 PYPI_PACKAGE = "spsdk"
 
