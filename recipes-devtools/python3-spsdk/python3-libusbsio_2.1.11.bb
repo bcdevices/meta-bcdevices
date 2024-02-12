@@ -22,14 +22,14 @@ SRC_URI[sha256sum] = "7d2e81f4aedccbe8a3c327b002c7750dd374abdf1ef6d54780728e653a
 inherit pypi pkgconfig python_setuptools_build_meta
 
 do_install:append() {
-	rm -rf ${D}/usr/lib/python3.11/site-packages/libusbsio/bin/linux_x86_64/*
-	#rm -rf ${D}/usr/lib/python3.11/site-packages/libusbsio/bin/linux_aarch64/libusbsio.so
-	rm -rf ${D}/usr/lib/python3.11/site-packages/libusbsio/bin/osx_arm64/*
-	rm -rf ${D}/usr/lib/python3.11/site-packages/libusbsio/bin/x64/*
-	rm -rf ${D}/usr/lib/python3.11/site-packages/libusbsio/bin/linux_armv7l/*
-	rm -rf ${D}/usr/lib/python3.11/site-packages/libusbsio/bin/linux_i686/*
-	rm -rf ${D}/usr/lib/python3.11/site-packages/libusbsio/bin/osx_x86_64/*
-	rm -rf ${D}/usr/lib/python3.11/site-packages/libusbsio/bin/Win32/*
+	rm -rf ${D}/usr/lib/python3.*/site-packages/libusbsio/bin/linux_x86_64/*
+	#rm -rf ${D}/usr/lib/python3.*/site-packages/libusbsio/bin/linux_aarch64/libusbsio.so
+	rm -rf ${D}/usr/lib/python3.*/site-packages/libusbsio/bin/osx_arm64/*
+	rm -rf ${D}/usr/lib/python3.*/site-packages/libusbsio/bin/x64/*
+	rm -rf ${D}/usr/lib/python3.*/site-packages/libusbsio/bin/linux_armv7l/*
+	rm -rf ${D}/usr/lib/python3.*/site-packages/libusbsio/bin/linux_i686/*
+	rm -rf ${D}/usr/lib/python3.*/site-packages/libusbsio/bin/osx_x86_64/*
+	rm -rf ${D}/usr/lib/python3.*/site-packages/libusbsio/bin/Win32/*
 }
 
 DEPENDS += " python3-setuptools-scm-native"

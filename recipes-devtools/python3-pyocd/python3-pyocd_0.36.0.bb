@@ -49,4 +49,4 @@ RDEPENDS:${PN} += " python3-typing-extensions"
 #    import getpass
 # ModuleNotFoundError: No module named 'getpass'
 # ```
-FILES:${PN} += "/usr/lib/python3.11/site-packages/pyocd/debug/sequences/sequences.lark"
+FILES:${PN} += "/usr/lib/python3.*/site-packages/pyocd/debug/sequences/sequences.lark"

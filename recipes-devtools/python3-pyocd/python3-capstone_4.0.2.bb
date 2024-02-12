@@ -10,5 +10,5 @@ SRC_URI[sha256sum] = "2842913092c9b69fd903744bc1b87488e1451625460baac173056e1808
 inherit pypi setuptools3
 
 do_install:append() {
-	rm -f ${D}/usr/lib/python3.11/site-packages/capstone/lib/libcapstone.a
+	rm -f ${D}/usr/lib/python3.*/site-packages/capstone/lib/libcapstone.a
 }

@@ -18,7 +18,7 @@ SRC_URI[sha256sum] = "284d3ce6ef7220fb2e12be3518d5b01c59ba2801e082fa86a8ff428464
 inherit pypi setuptools3
 
 do_install:append() {
-	rm -rf ${D}/usr/lib/python3.11/site-packages/pypemicro/libs/MacOS
-	rm -rf ${D}/usr/lib/python3.11/site-packages/pypemicro/libs/Linux
-	rm -rf ${D}/usr/lib/python3.11/site-packages/pypemicro/libs/Windows
+	rm -rf ${D}/usr/lib/python3.*/site-packages/pypemicro/libs/MacOS
+	rm -rf ${D}/usr/lib/python3.*/site-packages/pypemicro/libs/Linux
+	rm -rf ${D}/usr/lib/python3.*/site-packages/pypemicro/libs/Windows
 }
