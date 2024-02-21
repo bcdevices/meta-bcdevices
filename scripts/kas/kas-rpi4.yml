@@ -31,5 +31,6 @@ local_conf_header:
     KERNEL_IMAGETYPE = "Image"
     HDMI_GROUP = "1"
     HDMI_MODE = "4"
+    ENABLE_DWC2_PERIPHERAL = "1"
     ENABLE_UART = "1"
     KERNEL_MODULE_AUTOLOAD:rpi:append = " i2c-dev i2c-bcm2708"
