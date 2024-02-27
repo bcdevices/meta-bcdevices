@@ -31,6 +31,7 @@ DEPENDS += " pltagent"
 #DEPENDS += " wic-tools"
 
 RDEPENDS:${PN} += " bash"
+RDEPENDS:${PN} += " coreutils"
 RDEPENDS:${PN} += " dosfstools"
 RDEPENDS:${PN} += " parted"
 #RDEPENDS:${PN} += " pltagent-prog"
