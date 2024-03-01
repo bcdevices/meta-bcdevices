@@ -13,7 +13,7 @@ repos:
   poky:
     url: "https://git.yoctoproject.org/git/poky"
     path: layers/poky
-    refspec: "nanbield-4.3.2"
+    refspec: "nanbield-4.3.3"
     layers:
       meta:
       meta-poky:
