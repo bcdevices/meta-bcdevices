@@ -7,5 +7,4 @@ inherit packagegroup
 RDEPENDS:${PN} = "\
     pltagent \
     pltagent-msc-host \
-    util-linux-agetty \
 "
