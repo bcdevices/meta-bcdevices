@@ -21,9 +21,15 @@ SRC_URI[sha256sum] = "7d2e81f4aedccbe8a3c327b002c7750dd374abdf1ef6d54780728e653a
 
 inherit pypi pkgconfig python_setuptools_build_meta
 
+COMPATIBLE_HOST = "(aarch64.*|x86_64.*)-linux"
+
 do_install:append() {
-	rm -rf ${D}/usr/lib/python3.*/site-packages/libusbsio/bin/linux_x86_64/*
-	#rm -rf ${D}/usr/lib/python3.*/site-packages/libusbsio/bin/linux_aarch64/libusbsio.so
+	if [ "${TARGET_ARCH}" != "x86_64" ]; then
+	  rm -rf ${D}/usr/lib/python3.*/site-packages/libusbsio/bin/linux_x86_64/*
+	fi
+	if [ "${TARGET_ARCH}" != "aarch64" ]; then
+	  rm -rf ${D}/usr/lib/python3.*/site-packages/libusbsio/bin/linux_aarch64/libusbsio.so
+	fi
 	rm -rf ${D}/usr/lib/python3.*/site-packages/libusbsio/bin/osx_arm64/*
 	rm -rf ${D}/usr/lib/python3.*/site-packages/libusbsio/bin/x64/*
 	rm -rf ${D}/usr/lib/python3.*/site-packages/libusbsio/bin/linux_armv7l/*
@@ -35,3 +41,5 @@ do_install:append() {
 DEPENDS += " python3-setuptools-scm-native"
 
 RDEPENDS:${PN} += " libudev"
+
+PACKAGE_ARCH = "${TUNE_ARCH}"
