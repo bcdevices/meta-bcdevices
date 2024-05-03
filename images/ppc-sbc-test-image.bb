@@ -19,6 +19,10 @@ IMAGE_INSTALL:append = " python3-intelhex"
 IMAGE_INSTALL:append = " python3-pyocd"
 #IMAGE_INSTALL:append = " python3-spsdk"
 
+# lrzsz is a unix communication package providing the XMODEM,
+# YMODEM ZMODEM file transfer protocols.
+IMAGE_INSTALL:append = " lrzsz"
+
 fakeroot do_populate_bcdevices_src () {
         # Allow pltagent to use sudo
         echo "pltagent ALL=(ALL) NOPASSWD: ALL" >> ${IMAGE_ROOTFS}/etc/sudoers
