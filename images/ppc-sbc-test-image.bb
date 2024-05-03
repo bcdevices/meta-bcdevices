@@ -17,6 +17,7 @@ IMAGE_FEATURES:append = " empty-root-password"
 IMAGE_INSTALL:append = " packagegroup-ppc-sbc"
 IMAGE_INSTALL:append = " python3-intelhex"
 IMAGE_INSTALL:append = " python3-pyocd"
+#IMAGE_INSTALL:append = " python3-spsdk"
 
 fakeroot do_populate_bcdevices_src () {
         # Allow pltagent to use sudo
