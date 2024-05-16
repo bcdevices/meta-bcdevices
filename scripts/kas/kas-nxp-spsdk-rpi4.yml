@@ -1,0 +1,9 @@
+# kas-nxp-spsdk-rpi4.yml
+---
+header:
+  version: 13
+  includes:
+    - scripts/kas/kas-rpi4.yml
+
+target:
+  - ppc-sbc-nxp-spsdk-image

@@ -1,11 +1,12 @@
-# ppc-sbc-test-image
-SUMMARY = "Sample PPC SBC Image"
+# ppc-sbc-nxp-spsdk-image
+SUMMARY = "PPC SBC NXP SPSDK image"
 DESCRIPTION = " \
-    Sample image to be loaded in a Single-Board Computer (SBC) \
+    Image to be loaded in an Board Computer (SBC) \
     embedded in a custom Pogo-Pin Cassette (PPC) used to \
-    interact with the Device-under-Test (DUT) during production \
+    interact with a Device-under-Test (DUT) during production \
     firmware programming and In-Circuit Testing (ICT) with \
-    Blue Clover's Production Line Tool (PLT). \
+    Blue Clover's Production Line Tool (PLT) with \
+    the NXP Secure Provisioning SDK (SPSDK). \
 "
 HOMEPAGE = "https://docs.pltcloud.com/acc/ppc/yocto/"
 
@@ -17,8 +18,19 @@ IMAGE_FEATURES:append = " empty-root-password"
 IMAGE_INSTALL:append = " packagegroup-ppc-sbc"
 IMAGE_INSTALL:append = " python3-intelhex"
 IMAGE_INSTALL:append = " python3-pyocd"
+IMAGE_INSTALL:append = " python3-spsdk"
+
+# Optional, non-redistributable packages
+#IMAGE_INSTALL:append = " nxp-mcu-link"
+#IMAGE_INSTALL:append = " nxp-libusbsio-bin"
+#IMAGE_INSTALL:append = " nxp-lpcscrypt"
+#IMAGE_INSTALL:append = " segger-jlink-ob-nxp"
 
 IMAGE_INSTALL:append:rpi = " rpi-eeprom"
+
+# lrzsz is a unix communication package providing the XMODEM,
+# YMODEM ZMODEM file transfer protocols.
+IMAGE_INSTALL:append = " lrzsz"
 
 fakeroot do_populate_bcdevices_src () {
         # Allow pltagent to use sudo
