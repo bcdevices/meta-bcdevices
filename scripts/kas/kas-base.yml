@@ -13,7 +13,7 @@ repos:
   poky:
     url: "https://git.yoctoproject.org/git/poky"
     path: layers/poky
-    refspec: "scarthgap-5.0.1"
+    refspec: "scarthgap-5.0.2"
     layers:
       meta:
       meta-poky:
