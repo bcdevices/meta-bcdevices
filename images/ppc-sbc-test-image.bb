@@ -13,10 +13,13 @@ inherit core-image
 
 IMAGE_FEATURES:append = " debug-tweaks"
 IMAGE_FEATURES:append = " empty-root-password"
+IMAGE_FEATURES:append = " read-only-rootfs"
 
 IMAGE_INSTALL:append = " packagegroup-ppc-sbc"
 IMAGE_INSTALL:append = " python3-intelhex"
 IMAGE_INSTALL:append = " python3-pyocd"
+IMAGE_INSTALL:append = " libedit"
+IMAGE_INSTALL:append = " libudev"
 
 IMAGE_INSTALL:append:rpi = " rpi-eeprom"
 
