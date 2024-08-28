@@ -5,13 +5,13 @@ LIC_FILES_CHKSUM = "file://${COREBASE}/meta/COPYING.MIT;md5=3da9cfbcb788c80a0384
 
 SRC_URI = "\
   file://pltagent-msc-host-handler.sh \
+  file://pltagent-msc-host-handler-ext2.sh \
   file://pltagent-msc-mount.sh \
   file://pltagent-msc-present.sh \
   file://pltagent-msc-profile.sh \
   file://pltagent-msc-program.sh \
   file://pltagent-prompt.bashrc \
   file://pltagent-usbgadget-handler.sh \
-  file://usb-msc-vfat-empty.img.xz;unpack=0 \
 "
 
 S = "${WORKDIR}"
@@ -23,8 +23,8 @@ FILES:${PN} += " /opt/pltagent/bin/pltagent-msc-program"
 FILES:${PN} += " /opt/pltagent/bin/pltagent-msc-profile.sh"
 FILES:${PN} += " /opt/pltagent/etc/pltagent-prompt.bashrc"
 FILES:${PN} += " /opt/pltagent/sbin/pltagent-msc-host-handler.sh"
+FILES:${PN} += " /opt/pltagent/sbin/pltagent-msc-host-handler-ext2.sh"
 FILES:${PN} += " /opt/pltagent/sbin/pltagent-usbgadget-handler.sh"
-FILES:${PN} += " /opt/pltagent/usb-msc-vfat-empty.img.xz"
 
 DEPENDS += " packagegroup-base"
 DEPENDS += " pltagent"
@@ -33,6 +33,8 @@ DEPENDS += " pltagent"
 RDEPENDS:${PN} += " bash"
 RDEPENDS:${PN} += " coreutils"
 RDEPENDS:${PN} += " dosfstools"
+RDEPENDS:${PN} += " e2fsprogs-e2fsck"
+RDEPENDS:${PN} += " e2fsprogs-mke2fs"
 RDEPENDS:${PN} += " parted"
 #RDEPENDS:${PN} += " pltagent-prog"
 RDEPENDS:${PN} += " util-linux-losetup"
@@ -43,8 +45,6 @@ RRECOMMENDS:${PN} += " kernel-module-g-file-storage"
 RRECOMMENDS:${PN} += " kernel-module-g-mass-storage"
 
 do_install () {
-        install -m 0755 -d "${D}/opt/pltagent"
-        install -m 0644 "${S}/usb-msc-vfat-empty.img.xz" "${D}/opt/pltagent"
         install -m 0755 -d "${D}/opt/pltagent/bin"
         install -m 0755 "${S}/pltagent-msc-mount.sh" "${D}/opt/pltagent/bin/pltagent-msc-mount"
         install -m 0755 "${S}/pltagent-msc-present.sh" "${D}/opt/pltagent/bin/pltagent-msc-present"
@@ -53,6 +53,7 @@ do_install () {
         install -m 0755 "${S}/pltagent-prompt.bashrc" "${D}/opt/pltagent/etc/pltagent-prompt.bashrc"
         install -m 0755 -d "${D}/opt/pltagent/sbin"
         install -m 0755 "${S}/pltagent-msc-host-handler.sh" "${D}/opt/pltagent/sbin"
+	install -m 0755 "${S}/pltagent-msc-host-handler-ext2.sh" "${D}/opt/pltagent/sbin/pltagent-msc-host-handler-ext2.sh"
         install -m 0755 "${S}/pltagent-usbgadget-handler.sh" "${D}/opt/pltagent/sbin"
         install -m 0755 -d "${D}/etc/profile.d"
         install -m 0644 "${S}/pltagent-msc-profile.sh" "${D}/etc/profile.d/pltagent-msc.sh"

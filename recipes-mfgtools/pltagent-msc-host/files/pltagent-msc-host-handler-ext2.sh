@@ -36,8 +36,6 @@ sysfs_msc_forced_eject_path="${sysfs_msc_lun_path}/forced_eject"
 
 backing_file_path="/run/pltagent/usb-msc.img"
 backing_file_size="256M"
-partition_offset_dosfs="1024"
-partition_offset="1024K"
 
 local_mount_path="/run/pltagent/mnt"
 loopdev="/dev/loop0"
@@ -54,16 +52,21 @@ if [ ! -f "${sysfs_msc_forced_eject_path}" ]; then
 	echo "FAIL:${sysfs_msc_forced_eject_path} not found"
 	exit 1
 fi
+# if [ ! -f "${backing_file_template_path}" ]; then
+# 	echo "FAIL:${backing_file_template_path} not found"
+# 	exit 1
+# fi
 
 if [ ! -d "${local_mount_path}" ]; then
 	mkdir -m 0755 -p "${local_mount_path}"
 fi
 
 function gen_image {
-	dd if=/dev/zero of="${backing_file_path}" bs=${backing_file_size} count=1
-	/usr/sbin/parted --script "${backing_file_path}" -- mklabel msdos \
-		mkpart primary fat16 1MiB -2048s
-	/usr/sbin/mkfs.vfat.dosfstools -v --offset="${partition_offset_dosfs}" -S 1024 -F 16 -n RAMDISK "${backing_file_path}"
+	dd if=/dev/zero of="{backing_file_path}" bs=${backing_file_size} count=1
+        /usr/sbin/parted --script "${backing_file_path}" -- mklabel msdos \
+                mkpart primary ext2 1MiB -2048s
+	mke2fs "${backing_file_path}" "${backing_file_size}"
+	/usr/sbin/mkfs.ext2 -v --offset=1024 -L RAMDISK "${backing_file_path}"
 }
 
 function mount_locally {
@@ -84,9 +87,10 @@ function mount_locally {
 		gen_image
 	fi
 	parted_output=$(/usr/sbin/parted -m "${backing_file_path}" print)
+	partition_offset=$(echo "${parted_output}" | grep "${backing_file_path}" | cut -d: -f4)
 	echo "partition_offset: ${partition_offset}"
 	/sbin/losetup -o "${partition_offset}" "${loopdev}" "${backing_file_path}"
-	mount -t vfat "${loopdev}" "${local_mount_path}"
+	mount -t ext2 "${loopdev}" "${local_mount_path}"
 }
 
 function check_is_mounted {

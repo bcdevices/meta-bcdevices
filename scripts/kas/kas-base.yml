@@ -41,6 +41,8 @@ local_conf_header:
     SDKMACHINE = "x86_64"
     USER_CLASSES = "buildstats"
     PATCHRESOLVE = "noop"
+    BB_HASHSERVE_UPSTREAM = "hashserv.yocto.io:8687"
+    SSTATE_MIRRORS ?= "file://.* http://cdn.jsdelivr.net/yocto/sstate/all/PATH;downloadfilename=PATH"
   diskmon: |
     BB_DISKMON_DIRS = "\
       STOPTASKS,${TMPDIR},1G,100K \
