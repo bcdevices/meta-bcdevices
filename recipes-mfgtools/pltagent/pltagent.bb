@@ -21,7 +21,8 @@ LIC_FILES_CHKSUM = "file://${COREBASE}/meta/COPYING.MIT;md5=3da9cfbcb788c80a0384
 
 SRC_URI = "file://pltagent-profile"
 
-S = "${WORKDIR}"
+S = "${WORKDIR}/sources"
+UNPACKDIR = "${S}"
 
 inherit allarch
 inherit useradd
@@ -34,7 +35,7 @@ GROUPMEMS_PARAM:${PN} = "-g audio -a pltagent; -g plugdev -a pltagent"
 
 do_install () {
 	install -d 755 ${D}${localstatedir}/lib/${BPN}
-	install -m 644 ${WORKDIR}/${BPN}-profile ${D}${localstatedir}/lib/${BPN}/.profile
+	install -m 644 ${S}/${BPN}-profile ${D}${localstatedir}/lib/${BPN}/.profile
 	chown -R pltagent:adm ${D}${localstatedir}/lib/${BPN}
 }
 
@@ -51,5 +52,5 @@ FILES:${PN} += "${systemd_unitdir}/system/pltagent.service"
 
 do_install:append() {
         install -d ${D}/${systemd_unitdir}/system
-        install -m 0644 ${WORKDIR}/pltagent.service ${D}/${systemd_unitdir}/system
+        install -m 0644 ${S}/pltagent.service ${D}/${systemd_unitdir}/system
 }

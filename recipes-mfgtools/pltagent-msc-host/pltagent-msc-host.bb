@@ -14,7 +14,8 @@ SRC_URI = "\
   file://pltagent-usbgadget-handler.sh \
 "
 
-S = "${WORKDIR}"
+S = "${WORKDIR}/sources"
+UNPACKDIR = "${S}"
 
 FILES:${PN} += " /opt/pltagent/bin/pltagent-msc-mount"
 FILES:${PN} += " /opt/pltagent/bin/pltagent-msc-mount"
@@ -71,7 +72,7 @@ SRC_URI:append = " file://pltagent-msc.service "
 
 do_install:append() {
         install -d ${D}/${systemd_unitdir}/system
-        install -m 0644 ${WORKDIR}/pltagent-msc.service ${D}/${systemd_unitdir}/system
+        install -m 0644 ${S}/pltagent-msc.service ${D}/${systemd_unitdir}/system
 }
 
 FILES:${PN} += "${systemd_unitdir}/system"
