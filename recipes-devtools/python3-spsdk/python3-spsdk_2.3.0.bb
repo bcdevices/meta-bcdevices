@@ -14,14 +14,12 @@ SRC_URI[sha256sum] = "7136836e3aac690cb92eb0e33abb29cb27424963144ee6f414373bfbc9
 PYPI_PACKAGE = "spsdk"
 
 #inherit pypi setuptools3
-inherit pypi setuptools3 python_setuptools_build_meta
+inherit pypi python_setuptools_build_meta
 
-DEPENDS += "python3-pip-native"
-DEPENDS += "python3-wheel-native"
-DEPENDS += "python3-setuptools-native (>=72.1, <74)"
+#DEPENDS += "python3-pip-native"
+#DEPENDS += "python3-wheel-native"
 DEPENDS += "python3-setuptools-scm-native"
-RDEPENDS:${PN} += "python3-setuptools"
-
+#RDEPENDS:${PN} += "python3-setuptools"
 
 RDEPENDS:${PN} += "python3-appdirs"
 RDEPENDS:${PN} += "python3-argparse-addons"
