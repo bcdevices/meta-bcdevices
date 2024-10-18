@@ -12,13 +12,17 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=421492e27872cb498685e9d7649f63a2"
 PYPI_PACKAGE = "pyocd"
 SRC_URI[sha256sum] = "937782acc9daff054d50fb7c6f788cd94a84f80f0b85f25aacab99dc98228648"
 
-inherit pypi setuptools3
+inherit pypi python_setuptools_build_meta
 
-RDEPENDS:${PN} += " python3-setuptools"
+#DEPENDS += " python3-toml-native"
+DEPENDS += " python3-setuptools-scm-native"
+#DEPENDS += " python3-setuptools-scm"
+
+#RDEPENDS:${PN} += " python3-setuptools"
 
 RDEPENDS:${PN} += " python3-capstone"
 #RDEPENDS:${PN} += " python3-cmsis-pack-manager"
-RDEPENDS:${PN} += " python3-colorama"
+#RDEPENDS:${PN} += " python3-colorama"
 RDEPENDS:${PN} += " python3-importlib-metadata"
 RDEPENDS:${PN} += " python3-importlib-resources"
 RDEPENDS:${PN} += " python3-intelhex"
