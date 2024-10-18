@@ -15,7 +15,7 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=f6751a0652c0033100252953bfcf00d2"
 PYPI_PACKAGE = "pypemicro"
 SRC_URI[sha256sum] = "284d3ce6ef7220fb2e12be3518d5b01c59ba2801e082fa86a8ff428464682c4d"
 
-inherit pypi setuptools3
+inherit pypi python_setuptools_build_meta
 
 do_install:append() {
 	rm -rf ${D}/usr/lib/python3.*/site-packages/pypemicro/libs/MacOS
