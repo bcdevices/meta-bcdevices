@@ -7,13 +7,18 @@ distro: poky
 target:
   - ppc-sbc-test-image
 
+defaults:
+  repos:
+    branch: "styhead"
+
 repos:
   meta-bcdevices:
 
   poky:
     url: "https://git.yoctoproject.org/git/poky"
     path: layers/poky
-    refspec: "scarthgap-5.0.4"
+    # styhead-5.1.3 (1be4f8945506b4fb825af4ca9c673e183f7834dc)
+    commit:  "1be4f8945506b4fb825af4ca9c673e183f7834dc"
     layers:
       meta:
       meta-poky:
@@ -21,7 +26,6 @@ repos:
   meta-openembedded:
     url: "https://github.com/openembedded/meta-openembedded.git"
     path: layers/meta-openembedded
-    refspec: "scarthgap"
     layers:
       # meta-filesystems:
       meta-oe:
@@ -41,8 +45,8 @@ local_conf_header:
     SDKMACHINE = "x86_64"
     USER_CLASSES = "buildstats"
     PATCHRESOLVE = "noop"
-    BB_HASHSERVE_UPSTREAM = "hashserv.yocto.io:8687"
-    SSTATE_MIRRORS ?= "file://.* http://cdn.jsdelivr.net/yocto/sstate/all/PATH;downloadfilename=PATH"
+    # BB_HASHSERVE_UPSTREAM = "hashserv.yocto.io:8687"
+    # SSTATE_MIRRORS ?= "file://.* http://cdn.jsdelivr.net/yocto/sstate/all/PATH;downloadfilename=PATH"
   diskmon: |
     BB_DISKMON_DIRS = "\
       STOPTASKS,${TMPDIR},1G,100K \
