@@ -1,0 +1,26 @@
+# kas-rpi5.yml
+---
+header:
+  version: 13
+  includes:
+    - scripts/kas/kas-base.yml
+
+machine: raspberrypi5
+local_conf_header:
+  meta-bcddev-rpi5: |
+    CMDLINE_CMA += " console=ttynull"
+    CMDLINE_CMA += " video=HDMI-A-1:1080x1920@60"
+    CMDLINE_CMA += " video=HDMI-A-2:1280x720M@D"
+    DISABLE_OVERSCAN = "1"
+    DISABLE_RPI_BOOT_LOGO = "1"
+    DISABLE_SPLASH = "1"
+    ENABLE_DWC2_PERIPHERAL = "1"
+    ENABLE_I2C = "1"
+    # ENABLE_SPI_BUS = "1"
+    ENABLE_UART = "1"
+    # DISPMANX_OFFLINE = "1"
+    KERNEL_IMAGETYPE = "Image"
+    KERNEL_MODULE_AUTOLOAD:rpi:append = " i2c-dev i2c-bcm2708"
+    LICENSE_FLAGS_ACCEPTED += "synaptics-killswitch"
+    SDIMG_ROOTFS_TYPE = "ext4"
+    RPI_USE_U_BOOT = "1"

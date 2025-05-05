@@ -6,8 +6,9 @@
 default: all
 
 #all:kas-base
-all:kas-rpi4
-all:kas-nxp-spsdk-rpi4
+#all:kas-rpi4
+all:kas-rpi5
+#all:kas-nxp-spsdk-rpi4
 
 .PHONY: kas-%
 kas-%: scripts/kas/kas-%.yml
