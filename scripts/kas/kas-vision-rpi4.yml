@@ -1,9 +1,9 @@
-# kas-vision-rpi5.yml
+# kas-vision-rpi4.yml
 ---
 header:
   version: 13
   includes:
-    - scripts/kas/kas-rpi5.yml
+    - scripts/kas/kas-rpi4.yml
 
 target:
   - image-vision
