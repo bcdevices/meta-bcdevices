@@ -31,7 +31,7 @@ USERADD_PACKAGES = "${PN}"
 USERADD_PARAM:${PN} = "-m -g ${BPN} -G adm -r -d ${localstatedir}/lib/${BPN} \
                        -s /bin/sh -c 'pltagent account' ${BPN}"
 GROUPADD_PARAM:${PN} = "-r ${BPN}"
-GROUPMEMS_PARAM:${PN} = "-g audio -a pltagent; -g plugdev -a pltagent"
+GROUPMEMS_PARAM:${PN} = "-g video -a pltagent; -g audio -a pltagent; -g plugdev -a pltagent"
 
 do_install () {
 	install -d 755 ${D}${localstatedir}/lib/${BPN}

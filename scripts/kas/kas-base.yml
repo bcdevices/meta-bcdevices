@@ -33,7 +33,7 @@ repos:
     layers:
       # meta-filesystems:
       meta-oe:
-      # meta-multimedia:
+      meta-multimedia:
       # meta-networking:
       meta-python:
 

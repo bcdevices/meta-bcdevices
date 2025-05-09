@@ -9,6 +9,7 @@ default: all
 #all:kas-rpi4
 all:kas-rpi5
 #all:kas-nxp-spsdk-rpi4
+all:kas-vision-rpi5
 
 .PHONY: kas-%
 kas-%: scripts/kas/kas-%.yml
