@@ -28,6 +28,23 @@ shift $((OPTIND - 1))
 
 /sbin/modprobe libcomposite
 
+# USB Device Controller
+#udc_dev="*"
+#udc_dev="fe980000.usb" (RPi4)
+# Determine UDC automatically
+udc_list=$(ls /sys/class/udc)
+udc_count=$(echo "$udc_list" | wc -l)
+
+if [ "$udc_count" -eq 0 ]; then
+    echo "Error: No UDC found in /sys/class/udc!" >&2
+    exit 1
+elif [ "$udc_count" -gt 1 ]; then
+    echo "Error: Multiple UDCs found in /sys/class/udc: $udc_list" >&2
+    exit 1
+fi
+
+udc_dev="$udc_list"
+
 # Mount configfs
 #mount -t configfs none /sys/kernel/config
 sysfs_usb_gadget_path="/sys/kernel/config/usb_gadget"
@@ -69,7 +86,7 @@ if [ $should_enable -eq 1 ]; then
 	# HACK: avoid -EBUSY
 	sleep 1
 	# Enable new configuration for the USB controller
-	echo "fe980000.usb" >"${sysfs_usb_gadget_devpath}/UDC"
+	echo "${udc_dev}" >"${sysfs_usb_gadget_devpath}/UDC"
 
 	systemctl start serial-getty@ttyGS0
 fi
