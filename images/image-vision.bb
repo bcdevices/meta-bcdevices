@@ -31,7 +31,9 @@ IMAGE_INSTALL:append = " opencv opencv-apps python3-opencv"
 
 # Optional, non-redistributable packages
 
-IMAGE_INSTALL:append:rpi = " rpi-eeprom"
+IMAGE_INSTALL:append:raspberrypi4 = " rpi-eeprom"
+IMAGE_INSTALL:append:raspberrypi4-64 = " rpi-eeprom"
+IMAGE_INSTALL:append:raspberrypi5 = " rpi-eeprom"
 
 fakeroot do_populate_bcdevices_src () {
         # Allow pltagent to use sudo

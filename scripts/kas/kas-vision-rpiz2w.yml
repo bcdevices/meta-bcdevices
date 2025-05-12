@@ -1,0 +1,16 @@
+# kas-vision-rpiz2w.yml
+---
+header:
+  version: 13
+  includes:
+    - scripts/kas/kas-rpiz2w.yml
+
+target:
+  - image-vision
+
+local_conf_header:
+  meta-bcddev-vision-rpi5: |
+    PACKAGECONFIG:remove:pn-opencv = "gtk+3 qt5 tbb"
+    PACKAGECONFIG:append:pn-opencv = "python3"
+    VIDEO_CAMERA = "1"
+    RASPBERRYPI_CAMERA_V3 = "1"
