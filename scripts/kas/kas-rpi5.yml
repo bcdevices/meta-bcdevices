@@ -26,5 +26,5 @@ local_conf_header:
     # KERNEL_IMAGETYPE = "Image"
     KERNEL_MODULE_AUTOLOAD:rpi:append = " i2c-dev i2c-bcm2708"
     LICENSE_FLAGS_ACCEPTED += "synaptics-killswitch"
-    SDIMG_ROOTFS_TYPE = "ext4"
-    RPI_USE_U_BOOT = "1"
+    # SDIMG_ROOTFS_TYPE = "ext4"
+    # RPI_USE_U_BOOT = "1"
