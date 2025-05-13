@@ -7,6 +7,7 @@ default: all
 
 #all:kas-base
 all:kas-rpi4
+all:kas-net-rpi4
 #all:kas-rpi5
 #all:kas-nxp-spsdk-rpi4
 #all:kas-vision-rpi4
