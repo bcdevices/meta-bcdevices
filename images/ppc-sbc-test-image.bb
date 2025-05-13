@@ -20,8 +20,11 @@ IMAGE_INSTALL:append = " python3-intelhex"
 IMAGE_INSTALL:append = " python3-pyocd"
 IMAGE_INSTALL:append = " libedit"
 IMAGE_INSTALL:append = " libudev"
+IMAGE_INSTALL:append = " stm8flash"
 
-IMAGE_INSTALL:append:rpi = " rpi-eeprom"
+IMAGE_INSTALL:append:raspberrypi4 = " rpi-eeprom"
+IMAGE_INSTALL:append:raspberrypi4-64 = " rpi-eeprom"
+IMAGE_INSTALL:append:raspberrypi5 = " rpi-eeprom"
 
 fakeroot do_populate_bcdevices_src () {
         # Allow pltagent to use sudo

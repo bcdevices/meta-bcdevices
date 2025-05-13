@@ -9,7 +9,7 @@ target:
   - image-vision
 
 local_conf_header:
-  meta-bcddev-vision-rpi5: |
+  meta-bcddev-vision-rpi4: |
     PACKAGECONFIG:remove:pn-opencv = "gtk+3 qt5 tbb"
     PACKAGECONFIG:append:pn-opencv = "python3"
     VIDEO_CAMERA = "1"
