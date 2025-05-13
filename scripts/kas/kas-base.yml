@@ -34,7 +34,7 @@ repos:
       # meta-filesystems:
       meta-oe:
       meta-multimedia:
-      # meta-networking:
+      meta-networking:
       meta-python:
 
 bblayers_conf_header:
