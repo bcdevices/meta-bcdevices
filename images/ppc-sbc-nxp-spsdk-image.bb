@@ -26,7 +26,9 @@ IMAGE_INSTALL:append = " python3-spsdk"
 #IMAGE_INSTALL:append = " nxp-lpcscrypt"
 #IMAGE_INSTALL:append = " segger-jlink-ob-nxp"
 
-IMAGE_INSTALL:append:rpi = " rpi-eeprom"
+IMAGE_INSTALL:append:raspberrypi4 = " rpi-eeprom"
+IMAGE_INSTALL:append:raspberrypi4-64 = " rpi-eeprom"
+IMAGE_INSTALL:append:raspberrypi5 = " rpi-eeprom"
 
 # lrzsz is a unix communication package providing the XMODEM,
 # YMODEM ZMODEM file transfer protocols.
