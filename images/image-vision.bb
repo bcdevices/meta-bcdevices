@@ -12,24 +12,18 @@ HOMEPAGE = "https://docs.pltcloud.com/acc/ppc/yocto/"
 
 inherit core-image
 
-IMAGE_FEATURES:append = " debug-tweaks"
+IMAGE_FEATURES:append = " allow-empty-password"
+IMAGE_FEATURES:append = " allow-root-login"
 IMAGE_FEATURES:append = " empty-root-password"
 IMAGE_FEATURES:append = " read-only-rootfs"
 
 IMAGE_INSTALL:append = " packagegroup-ppc-sbc"
-
-inherit core-image
-
-IMAGE_FEATURES:append = " debug-tweaks"
-IMAGE_FEATURES:append = " empty-root-password"
 
 #IMAGE_INSTALL:append = " libedit"
 #IMAGE_INSTALL:append = " libudev"
 
 IMAGE_INSTALL:append = " libcamera-apps"
 IMAGE_INSTALL:append = " opencv opencv-apps python3-opencv"
-
-# Optional, non-redistributable packages
 
 IMAGE_INSTALL:append:raspberrypi4 = " rpi-eeprom"
 IMAGE_INSTALL:append:raspberrypi4-64 = " rpi-eeprom"

@@ -6,10 +6,11 @@ header:
 distro: poky
 target:
   - ppc-sbc-test-image
+  # - core-image-base
 
 defaults:
   repos:
-    branch: "styhead"
+    branch: "walnascar"
 
 repos:
   meta-bcdevices:
@@ -17,15 +18,17 @@ repos:
   meta-raspberrypi:
     url: "https://git.yoctoproject.org/meta-raspberrypi"
     path: layers/meta-raspberrypi
-    branch: "master"
+    # branch: "master"
   poky:
     url: "https://git.yoctoproject.org/git/poky"
     path: layers/poky
-    # styhead-5.1.4 (3f23ab950d60015d437a6aad46e51bdd59906deb)
-    commit: "3f23ab950d60015d437a6aad46e51bdd59906deb"
+    # walnascar-5.2 (ca3ede496232eecd86bd351c4080e9c31b514d92)
+    commit: "ca3ede496232eecd86bd351c4080e9c31b514d92"
+
     layers:
       meta:
       meta-poky:
+      meta-yocto-bsp:
 
   meta-openembedded:
     url: "https://github.com/openembedded/meta-openembedded.git"
@@ -35,6 +38,7 @@ repos:
       meta-oe:
       meta-multimedia:
       meta-networking:
+      # meta-perl:
       meta-python:
 
 bblayers_conf_header:

@@ -11,7 +11,7 @@ HOMEPAGE = "https://docs.pltcloud.com/acc/ppc/yocto/"
 
 inherit core-image
 
-IMAGE_FEATURES:append = " debug-tweaks"
+IMAGE_FEATURES:append = " allow-empty-password allow-root-login"
 IMAGE_FEATURES:append = " empty-root-password"
 IMAGE_FEATURES:append = " read-only-rootfs"
 

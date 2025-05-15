@@ -12,7 +12,8 @@ HOMEPAGE = "https://docs.pltcloud.com/acc/ppc/yocto/"
 
 inherit core-image
 
-IMAGE_FEATURES:append = " debug-tweaks"
+IMAGE_FEATURES:append = " allow-empty-password"
+IMAGE_FEATURES:append = " allow-root-login"
 IMAGE_FEATURES:append = " empty-root-password"
 
 IMAGE_INSTALL:append = " packagegroup-ppc-sbc"
