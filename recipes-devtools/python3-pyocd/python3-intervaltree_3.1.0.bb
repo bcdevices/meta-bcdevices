@@ -1,6 +1,6 @@
 # python3-intervaltree
 SUMMARY = "Editable interval tree data structure for Python 2 and 3"
-HOMEPAGE ="https://pypi.org/project/intervaltree"
+HOMEPAGE = "https://pypi.org/project/intervaltree"
 LIC_FILES_CHKSUM = "file://LICENSE.txt;md5=3b83ef96387f14655fc854ddc3c6bd57"
 LICENSE = "Apache-2.0"
 

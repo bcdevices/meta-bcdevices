@@ -1,6 +1,6 @@
 # python3-lark
 SUMMARY = "Python package for a modern parsing library"
-HOMEPAGE ="https://pypi.org/project/lark"
+HOMEPAGE = "https://pypi.org/project/lark"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=fcfbf1e2ecc0f37acbb5871aa0267500"
 

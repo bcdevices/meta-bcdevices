@@ -1,6 +1,6 @@
 # python3-sly
 SUMMARY = "Python implementation of the lex and yacc tools"
-HOMEPAGE ="https://pypi.org/project/sly"
+HOMEPAGE = "https://pypi.org/project/sly"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=40c72247cf23e6d5397482dae055914a"
 

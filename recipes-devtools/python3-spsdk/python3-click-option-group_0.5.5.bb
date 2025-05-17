@@ -1,6 +1,6 @@
 # python3-click-option-group
 SUMMARY = "Recipe to embedded the Python PiP Package click-option-group"
-HOMEPAGE ="https://pypi.org/project/click-option-group"
+HOMEPAGE = "https://pypi.org/project/click-option-group"
 LICENSE = "BSD-3-Clause"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=f10e5cf198b01ce7c7ed725a55d3b39d"
 

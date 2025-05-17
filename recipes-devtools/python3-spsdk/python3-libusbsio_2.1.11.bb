@@ -8,7 +8,7 @@ DESCRIPTION = "\
   This Python component provides a wrapper object which encapsulates \
   the binary library and exposes its API to Python applications. \
 "
-HOMEPAGE ="https://pypi.org/project/libusbsio"
+HOMEPAGE = "https://pypi.org/project/libusbsio"
 # https://www.nxp.com/design/software/development-software/libusbsio-host-library-for-usb-enabled-mcus:LIBUSBSIO
 
 LICENSE = "BSD-3-Clause"

@@ -1,6 +1,6 @@
 # python3-deepmerge
 SUMMARY = "tools to handle merging of nested data structures in python."
-HOMEPAGE ="https://pypi.org/project/deepmerge"
+HOMEPAGE = "https://pypi.org/project/deepmerge"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=5461efe2d19ce359c7d72d7be3c05e1c"
 

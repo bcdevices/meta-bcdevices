@@ -1,6 +1,6 @@
 # python3-commentjson
 SUMMARY = "Python package to create JSON files with Python and JavaScript style inline comments"
-HOMEPAGE ="https://pypi.org/project/commentjson"
+HOMEPAGE = "https://pypi.org/project/commentjson"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://LICENSE.rst;md5=722175c22a1ab5e2e0fd153da885198b"
 

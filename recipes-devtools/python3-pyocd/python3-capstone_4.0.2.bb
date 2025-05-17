@@ -1,6 +1,6 @@
 # python3-capstone
 SUMMARY = "Capstone disassembly enginde"
-HOMEPAGE ="http://www.capstone-engine.org/"
+HOMEPAGE = "http://www.capstone-engine.org/"
 LIC_FILES_CHKSUM = "file://LICENSE.TXT;md5=1cfbff4f40612b0144e498a47c91499c"
 LICENSE = "BSD-3-Clause"
 

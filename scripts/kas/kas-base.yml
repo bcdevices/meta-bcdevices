@@ -10,7 +10,8 @@ target:
 
 defaults:
   repos:
-    branch: "walnascar"
+    # branch: "walnascar"
+    branch: "master"
 
 repos:
   meta-bcdevices:
@@ -23,7 +24,7 @@ repos:
     url: "https://git.yoctoproject.org/git/poky"
     path: layers/poky
     # walnascar-5.2 (ca3ede496232eecd86bd351c4080e9c31b514d92)
-    commit: "ca3ede496232eecd86bd351c4080e9c31b514d92"
+    # commit: "ca3ede496232eecd86bd351c4080e9c31b514d92"
 
     layers:
       meta:

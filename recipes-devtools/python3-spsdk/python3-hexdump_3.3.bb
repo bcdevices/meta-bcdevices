@@ -1,6 +1,6 @@
 # python3-hexdump
 SUMMARY = "Recipe to embedded the Python PiP Package hexdump"
-HOMEPAGE ="https://pypi.org/project/hexdump"
+HOMEPAGE = "https://pypi.org/project/hexdump"
 
 LICENSE = "PD"
 LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/PD;md5=b3597d12946881e13cb3b548d1173851"

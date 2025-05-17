@@ -1,6 +1,6 @@
 # python3-libusb-package
 SUMMARY = "Package containing libusb so it can be installed via Python package managers"
-HOMEPAGE ="https://pypi.org/project/libusb-package"
+HOMEPAGE = "https://pypi.org/project/libusb-package"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=e23fadd6ceef8c618fc1c65191d846fa"
 LICENSE = "Apache-2.0"
 

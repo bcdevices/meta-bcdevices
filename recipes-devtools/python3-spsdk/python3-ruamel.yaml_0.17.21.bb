@@ -1,6 +1,6 @@
 # python3-ruamel.yaml
 SUMMARY = "YAML 1.2 loader/dumper"
-HOMEPAGE ="https://pypi.org/project/ruamel.yaml"
+HOMEPAGE = "https://pypi.org/project/ruamel.yaml"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=034154b7344d15438bc5ed5ee9cc075f"
 

@@ -1,6 +1,6 @@
 # python3-pylink-square
 SUMMARY = "Python interface for SEGGER J-Link"
-HOMEPAGE ="https://pypi.org/project/pylink-square"
+HOMEPAGE = "https://pypi.org/project/pylink-square"
 LIC_FILES_CHKSUM = "file://LICENSE.md;md5=834c4b2cb72db13143b58bebff15bafb"
 LICENSE = "Apache-2.0"
 

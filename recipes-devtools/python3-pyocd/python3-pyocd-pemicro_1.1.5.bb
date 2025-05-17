@@ -1,6 +1,6 @@
 # python3-pyocd-pemicro
 SUMMARY = "PEMicro probe plugin for pyOCD"
-HOMEPAGE ="https://github.com/pyocd/pyocd-pemicro"
+HOMEPAGE = "https://github.com/pyocd/pyocd-pemicro"
 LICENSE = "BSD-3-Clause"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=f6751a0652c0033100252953bfcf00d2"
 
