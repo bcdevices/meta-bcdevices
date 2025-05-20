@@ -28,8 +28,9 @@ inherit allarch
 inherit useradd
 
 USERADD_PACKAGES = "${PN}"
+# set empty password, assumes 'IMAGE_FEATURES:append = " allow-empty-password"'
 USERADD_PARAM:${PN} = "-m -g ${BPN} -G adm -r -d ${localstatedir}/lib/${BPN} \
-                       -s /bin/sh -c 'pltagent account' ${BPN}"
+                       -s /bin/sh -c 'pltagent account' -p '' ${BPN}"
 GROUPADD_PARAM:${PN} = "-r ${BPN}"
 GROUPMEMS_PARAM:${PN} = "-g video -a pltagent; -g audio -a pltagent; -g plugdev -a pltagent"
 
