@@ -22,8 +22,8 @@ repos:
   poky:
     url: "https://git.yoctoproject.org/git/poky"
     path: layers/poky
-    # walnascar-5.2.1 (84164c4dae507376edb18d327414ccf0d1642dd2)
-    commit: "84164c4dae507376edb18d327414ccf0d1642dd2"
+    # walnascar-5.2.2 (def9fe0e4f87d3a4b5e64db2a16cd5b6289942f9)
+    commit: "def9fe0e4f87d3a4b5e64db2a16cd5b6289942f9"
 
     layers:
       meta:
