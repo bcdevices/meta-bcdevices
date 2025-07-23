@@ -18,6 +18,7 @@ IMAGE_FEATURES:append = " empty-root-password"
 IMAGE_FEATURES:append = " read-only-rootfs"
 
 IMAGE_INSTALL:append = " packagegroup-ppc-sbc"
+IMAGE_INSTALL:append = " systemd-auto-login-ttygs0"
 
 #IMAGE_INSTALL:append = " libedit"
 #IMAGE_INSTALL:append = " libudev"
