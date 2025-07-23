@@ -22,7 +22,6 @@ IMAGE_INSTALL:append = " packagegroup-ppc-net"
 
 inherit core-image
 
-IMAGE_FEATURES:append = " debug-tweaks"
 IMAGE_FEATURES:append = " empty-root-password"
 
 #IMAGE_INSTALL:append = " libedit"
