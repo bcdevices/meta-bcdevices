@@ -23,6 +23,7 @@ RDEPENDS:${PN} = "\
     srecord \
     stm32flash \
     sudo \
+    tftp-hpa \
     util-linux-blkid \
     vim \
 "
