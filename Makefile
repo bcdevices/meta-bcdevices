@@ -8,11 +8,11 @@ default: all
 #all:kas-base
 #all:kas-rpi4
 #all:kas-net-rpi4
-all:kas-rpi5
-all:kas-net-rpi5
+#all:kas-rpi5
+#all:kas-net-rpi5
 #all:kas-nxp-spsdk-rpi4
-#all:kas-vision-rpi4
-#all:kas-vision-rpi5
+all:kas-vision-rpi4
+all:kas-vision-rpi5
 #all:kas-vision-rpiz2w
 
 .PHONY: kas-%
