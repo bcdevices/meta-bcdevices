@@ -71,3 +71,4 @@ local_conf_header:
     DISTRO_FEATURES = "acl ipv4 ipv6 usbgadget usbhost xattr vfat seccomp multiarch ldconfig systemd"
     #INHERIT += "create-spdx"
     INHIBIT_PACKAGE_DEBUG_SPLIT = "1"
+    PACKAGECONFIG:append:pn-libcamera = " pycamera"
