@@ -17,6 +17,7 @@ RDEPENDS:${PN} = " \
     python3-numbers \
     python3-ctypes \
     python3-colorzero \
+    libcamera \
 "
 
 COMPATIBLE_HOST = "null"
