@@ -24,7 +24,9 @@ IMAGE_INSTALL:append = " systemd-auto-login-ttygs0"
 #IMAGE_INSTALL:append = " libudev"
 
 IMAGE_INSTALL:append = " libcamera-apps"
+IMAGE_INSTALL:append = " pltagent-cam"
 IMAGE_INSTALL:append = " opencv opencv-apps python3-opencv"
+IMAGE_INSTALL:append = " python3-picamera2"
 
 IMAGE_INSTALL:append:raspberrypi4 = " rpi-eeprom"
 IMAGE_INSTALL:append:raspberrypi4-64 = " rpi-eeprom"
