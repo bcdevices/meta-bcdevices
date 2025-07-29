@@ -20,5 +20,9 @@ RDEPENDS:${PN} = " \
     libcamera \
 "
 
+DEPENDS += "python3-pybind11"
+
+# RDEPENDS:${PN} += "libcamera-pycamera"
+
 COMPATIBLE_HOST = "null"
 COMPATIBLE_HOST:rpi = "(.*)"
