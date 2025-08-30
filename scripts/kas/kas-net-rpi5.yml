@@ -1,0 +1,9 @@
+# kas-net-rpi5.yml
+---
+header:
+  version: 13
+  includes:
+    - scripts/kas/kas-rpi5.yml
+
+target:
+  - image-net

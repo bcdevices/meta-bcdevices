@@ -8,3 +8,7 @@ RDEPENDS:${PN} = "\
     pltagent \
     pltagent-msc-host \
 "
+
+RDEPENDS:${PN} += " segger-jlink-placeholder"
+RDEPENDS:${PN} += " nrfutil-placeholder"
+RDEPENDS:${PN} += " usbboot"

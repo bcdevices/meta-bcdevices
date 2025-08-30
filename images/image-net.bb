@@ -18,11 +18,11 @@ IMAGE_FEATURES:append = " empty-root-password"
 IMAGE_FEATURES:append = " read-only-rootfs"
 
 IMAGE_INSTALL:append = " packagegroup-ppc-sbc"
+IMAGE_INSTALL:append = " systemd-auto-login-ttygs0"
 IMAGE_INSTALL:append = " packagegroup-ppc-net"
 
 inherit core-image
 
-IMAGE_FEATURES:append = " debug-tweaks"
 IMAGE_FEATURES:append = " empty-root-password"
 
 #IMAGE_INSTALL:append = " libedit"
