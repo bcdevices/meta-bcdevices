@@ -6,8 +6,6 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=e3fc50a88d0a364313df4b21ef20c29e"
 SRC_URI = "git://github.com/raspberrypi/usbboot.git;protocol=https;branch=master"
 SRCREV = "aeb8924aa253ed4e44fdabf4052ec18f70b8d685"
 
-S = "${WORKDIR}/git"
-
 DEPENDS += "libusb1 pkgconfig"
 
 inherit pkgconfig
